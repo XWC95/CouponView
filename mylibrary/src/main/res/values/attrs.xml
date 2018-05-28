@@ -2,14 +2,20 @@
 <resources>
     <declare-styleable name="CouponView">
 
-        <attr name="drawType">
+        <attr name="drawShapeType">
             <enum name="circle" value="0" />
             <enum name="oval" value="1" />
             <enum name="triangle" value="2" />
             <enum name="square" value="3" />
+            <enum name="line" value="4" />
         </attr>
 
+        <attr name="isDrawLeftShape" format="boolean" />
+        <attr name="isDrawRightShape" format="boolean" />
+        <attr name="isDrawTopShape" format="boolean" />
+        <attr name="isDrawBottomShape" format="boolean" />
 
+        <attr name="isDrawLine" format="boolean" />
         <attr name="isDrawLeftSide" format="boolean" />
         <attr name="isDrawRightSide" format="boolean" />
         <attr name="isDrawTopSide" format="boolean" />
@@ -18,6 +24,9 @@
         <attr name="dashGap" format="dimension" />
         <attr name="dashWidth" format="dimension" />
         <attr name="bgc" format="color" />
+        <attr name="lineColor" format="color" />
+        <attr name="lineWidth" format="dimension" />
+
 
     </declare-styleable>
 </resources>

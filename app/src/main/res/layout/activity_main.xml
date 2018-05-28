@@ -1,102 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/timg"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context="com.github.xwc.couponview.MainActivity">
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/timg"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context="com.github.xwc.couponview.MainActivity">
 
 
-    <com.github.xwc.view.CouponView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        app:bgc="#AD5A5A"
-        app:dashGap="5dp"
-        app:dashWidth="5dp"
-        app:drawType="circle"
-        app:isDrawLeftSide="false"
-        app:isDrawRightSide="false">
+        <com.github.xwc.view.CouponView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            app:bgc="#AD5A5A"
+            app:dashGap="5dp"
+            app:dashWidth="5dp"
+            app:drawShapeType="circle"
+            app:isDrawBottomShape="true"
+            app:isDrawTopShape="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="CouponView"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="CouponView"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    </com.github.xwc.view.CouponView>
+        </com.github.xwc.view.CouponView>
 
-    <com.github.xwc.view.CouponView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        app:bgc="#AD5A5A"
-        app:dashGap="5dp"
-        app:dashWidth="5dp"
-        app:drawType="oval"
-        app:isDrawBottomSide="false"
-        app:isDrawTopSide="false">
+        <com.github.xwc.view.CouponView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:bgc="#AD5A5A"
+            app:dashGap="5dp"
+            app:dashWidth="5dp"
+            app:drawShapeType="oval"
+            app:isDrawLeftShape="true"
+            app:isDrawRightShape="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="CouponView"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="CouponView"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    </com.github.xwc.view.CouponView>
+        </com.github.xwc.view.CouponView>
 
-    <com.github.xwc.view.CouponView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        app:bgc="#AD5A5A"
-        app:dashGap="5dp"
-        app:dashWidth="5dp"
-        app:drawType="triangle"
-        app:isDrawBottomSide="false"
-        app:isDrawLeftSide="false"
-        app:isDrawRightSide="false">
+        <com.github.xwc.view.CouponView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:bgc="#AD5A5A"
+            app:dashGap="5dp"
+            app:dashWidth="5dp"
+            app:drawShapeType="triangle"
+            app:isDrawTopShape="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="CouponView"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="CouponView"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    </com.github.xwc.view.CouponView>
+        </com.github.xwc.view.CouponView>
 
-    <com.github.xwc.view.CouponView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        app:bgc="#AD5A5A"
-        app:dashGap="5dp"
-        app:dashWidth="5dp"
-        app:drawType="square"
-        app:isDrawLeftSide="false"
-        app:isDrawRightSide="false"
-        app:isDrawTopSide="false">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="CouponView"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <com.github.xwc.view.CouponView
+            android:id="@+id/couponView"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp">
 
-    </com.github.xwc.view.CouponView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="CouponView"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-</LinearLayout>
+        </com.github.xwc.view.CouponView>
+
+        <com.github.xwc.view.CouponView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:bgc="#AD5A5A"
+            app:dashGap="5dp"
+            app:dashWidth="5dp"
+            app:drawShapeType="triangle"
+            app:isDrawBottomSide="true"
+            app:isDrawLeftSide="true"
+            app:isDrawRightSide="true"
+            app:isDrawTopSide="true"
+            app:lineColor="#ffffff"
+            app:lineWidth="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="CouponView"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </com.github.xwc.view.CouponView>
+    </LinearLayout>
+</ScrollView>
