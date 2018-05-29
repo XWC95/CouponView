@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/transparent_dialog_pattern"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.github.xwc.couponview.MainActivity">
+
+    <com.github.xwc.view.CouponView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:bgc="#AD5A5A"
+        app:dashGap="5dp"
+        app:dashWidth="5dp"
+        app:drawShapeType="circle"
+        app:isDrawBottomShape="true"
+        app:isDrawTopShape="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="CouponView"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </com.github.xwc.view.CouponView>
+
+    <com.github.xwc.view.CouponView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        app:bgc="#AD5A5A"
+        app:dashGap="5dp"
+        app:dashWidth="5dp"
+        app:drawShapeType="oval"
+        app:isDrawLeftShape="true"
+        app:isDrawRightShape="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="CouponView"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </com.github.xwc.view.CouponView>
+
+    <com.github.xwc.view.CouponView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        app:bgc="#AD5A5A"
+        app:dashGap="5dp"
+        app:dashWidth="5dp"
+        app:drawShapeType="triangle"
+        app:isDrawBottomShape="true"
+        app:isDrawTopShape="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="CouponView"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </com.github.xwc.view.CouponView>
+
+
+    <com.github.xwc.view.CouponView
+        android:id="@+id/couponView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        app:bgc="#C0C0C0"
+        app:dashGap="5dp"
+        app:dashWidth="5dp"
+        app:drawShapeType="square"
+        app:isDrawLeftShape="true"
+        app:isDrawRightShape="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="CouponView"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </com.github.xwc.view.CouponView>
+
+    <!--<com.github.xwc.view.CouponView-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--app:bgc="#AD5A5A"-->
+    <!--app:dashGap="5dp"-->
+    <!--app:dashWidth="5dp"-->
+    <!--app:drawShapeType="circle"-->
+    <!--app:isDrawBottomShape="true"-->
+    <!--app:isDrawLeftSide="true"-->
+    <!--app:isDrawRightSide="true"-->
+    <!--app:isDrawTopShape="true"-->
+    <!--app:lineColor="#ffffff"-->
+    <!--app:lineWidth="2dp">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="CouponView"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="20sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--</com.github.xwc.view.CouponView>-->
+</LinearLayout>

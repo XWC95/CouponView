@@ -89,6 +89,7 @@ public class CouponModel extends DrawModel {
 
     @Override
     protected void drawSquare() {
+
         for (int i = 0; i < verItemSize; i++) {
             float y = view.getDashGap() + view.getDashWidth() + verRedundancy / 2 + ((view.getDashGap() + view.getDashWidth() * 2) * i);
 
@@ -96,10 +97,11 @@ public class CouponModel extends DrawModel {
             // 设置正方形大小
             rectf.top = y - view.getDashWidth() / 2;
             rectf.bottom = y + view.getDashWidth();
+
             // 如果isDrawLeftSide为true
             if (view.isDrawLeftShape()) {
                 rectf.left = 0;
-                rectf.right = view.getDashWidth() / 2;
+                rectf.right = view.getDashWidth() ;
                 mCanvas.drawRect(rectf, shapePaint);
             }
 
@@ -112,7 +114,6 @@ public class CouponModel extends DrawModel {
 
         for (int i = 0; i < horItemSize; i++) {
             float x = view.getDashGap() + view.getDashWidth() + horRedundancy / 2 + ((view.getDashGap() + view.getDashWidth() * 2) * i);
-
             mCanvas.drawRect(0, x, 0, view.getDashWidth(), shapePaint);
 
             RectF rectf = new RectF();
@@ -195,10 +196,10 @@ public class CouponModel extends DrawModel {
             //圆心位置 = 间隙 + item半径 + 垂直方向多余部分/2 + （间隙 + item半径*2） * i
             float y = view.getDashGap() + view.getDashWidth() + verRedundancy / 2 + ((view.getDashGap() + view.getDashWidth() * 2) * i);
             if (view.isDrawLeftLine()) {
-                mCanvas.drawLine(0, y - view.getDashWidth(), 0, y + view.getDashWidth(), linePaint);
+                mCanvas.drawLine(view.getLineMarginLeft(), y - view.getDashWidth(), view.getLineMarginLeft(), y + view.getDashWidth(), linePaint);
             }
             if (view.isDrawRightLine()) {
-                mCanvas.drawLine(view.getWidth(), y - view.getDashWidth(), view.getWidth(), y + view.getDashWidth(), linePaint);
+                mCanvas.drawLine(view.getWidth() - view.getLineMarginRight(), y - view.getDashWidth(), view.getWidth() - view.getLineMarginRight(), y + view.getDashWidth(), linePaint);
             }
         }
 
@@ -206,10 +207,10 @@ public class CouponModel extends DrawModel {
         for (int i = 0; i < horItemSize; i++) {
             float x = view.getDashGap() + view.getDashWidth() + horRedundancy / 2 + ((view.getDashGap() + view.getDashWidth() * 2) * i);
             if (view.isDrawTopLine()) {
-                mCanvas.drawLine(x - view.getDashWidth(), 0, x + view.getDashWidth(), 0, linePaint);
+                mCanvas.drawLine(x - view.getDashWidth(), view.getLineMarginTop(), x + view.getDashWidth(), view.getLineMarginTop(), linePaint);
             }
             if (view.isDrawBottomLine()) {
-                mCanvas.drawLine(x - view.getDashWidth(), view.getHeight(), x + view.getDashWidth(), view.getHeight(), linePaint);
+                mCanvas.drawLine(x - view.getDashWidth(), view.getHeight() - view.getLineMarginBottom(), x + view.getDashWidth(), view.getHeight() - view.getLineMarginBottom(), linePaint);
             }
         }
     }

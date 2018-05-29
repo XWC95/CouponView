@@ -78,7 +78,7 @@ public abstract class DrawModel {
         if (verRedundancy == 0) {
             verRedundancy = (h - view.getDashGap()) % (view.getDashWidth() * 2 + view.getDashGap());
         }
-        verItemSize = (int) ((h - view.getDashGap()) / (view.getDashWidth() * 2 + view.getDashGap()));
+        verItemSize = ((h - view.getDashGap()) / (view.getDashWidth() * 2 + view.getDashGap()));
     }
 
     /**
@@ -90,7 +90,7 @@ public abstract class DrawModel {
         if (horRedundancy == 0) {
             horRedundancy = (w - view.getDashGap()) % (view.getDashWidth() * 2 + view.getDashGap());
         }
-        horItemSize = (int) ((w - view.getDashGap()) / (view.getDashWidth() * 2 + view.getDashGap()));
+        horItemSize = ((w - view.getDashGap()) / (view.getDashWidth() * 2 + view.getDashGap()));
     }
 
     /**

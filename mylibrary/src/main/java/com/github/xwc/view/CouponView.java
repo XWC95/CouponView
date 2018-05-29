@@ -1,6 +1,7 @@
 package com.github.xwc.view;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -21,7 +22,6 @@ public class CouponView extends FrameLayout {
     public static final int ELLIPSE = 1;
     public static final int TRIANGLE = 2;
     public static final int SQUARE = 3;
-    public static final int LINE = 4;
 
     //绘制的图层
     private Bitmap mBitmap;
@@ -32,10 +32,10 @@ public class CouponView extends FrameLayout {
     private int bgc = Color.parseColor("#C0C0C0");
 
     //item间距
-    private float dashGap;
+    private int dashGap;
 
     //item半径
-    private float dashWidth;
+    private int dashWidth;
 
     //虚线的颜色
     @ColorInt
@@ -54,6 +54,11 @@ public class CouponView extends FrameLayout {
     private boolean isDrawTopLine = false;
     private boolean isDrawRightLine = false;
     private boolean isDrawBottomLine = false;
+
+    private int lineMarginTop;
+    private int lineMarginBottom;
+    private int lineMarginLeft;
+    private int lineMarginRight;
 
     private DrawModel drawModel;
 
@@ -75,7 +80,7 @@ public class CouponView extends FrameLayout {
             bgc = typedArray.getColor(R.styleable.CouponView_bgc, bgc);
 
             lineColor = typedArray.getColor(R.styleable.CouponView_lineColor, Color.WHITE);
-            lineWidth = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineWidth, 10);
+            lineWidth = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineWidth, dpToPx(2));
 
             isDrawLeftLine = typedArray.getBoolean(R.styleable.CouponView_isDrawLeftSide, false);
             isDrawTopLine = typedArray.getBoolean(R.styleable.CouponView_isDrawTopSide, false);
@@ -83,9 +88,13 @@ public class CouponView extends FrameLayout {
             isDrawBottomLine = typedArray.getBoolean(R.styleable.CouponView_isDrawBottomSide, false);
 
             isDrawLeftShape = typedArray.getBoolean(R.styleable.CouponView_isDrawLeftShape, false);
-            isDrawTopShape = typedArray.getBoolean(R.styleable.CouponView_isDrawTopShape, false);
             isDrawRightShape = typedArray.getBoolean(R.styleable.CouponView_isDrawRightShape, false);
             isDrawBottomShape = typedArray.getBoolean(R.styleable.CouponView_isDrawBottomShape, false);
+
+            lineMarginTop = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginTop, dashWidth );
+            lineMarginBottom = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginBottom, dashWidth);
+            lineMarginLeft = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginLeft, dashWidth);
+            lineMarginRight = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginRight, dashWidth );
 
             typedArray.recycle();
         }
@@ -144,8 +153,11 @@ public class CouponView extends FrameLayout {
         drawModel.drawLine();
     }
 
-    public boolean isDrawLeftShape() {
+    public static int dpToPx(int dp) {
+        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
+    }
 
+    public boolean isDrawLeftShape() {
         return isDrawLeftShape;
     }
 
@@ -213,11 +225,11 @@ public class CouponView extends FrameLayout {
         return drawType;
     }
 
-    public float getDashGap() {
+    public int getDashGap() {
         return dashGap;
     }
 
-    public float getDashWidth() {
+    public int getDashWidth() {
         return dashWidth;
     }
 
@@ -231,12 +243,12 @@ public class CouponView extends FrameLayout {
         return this;
     }
 
-    public CouponView setDashGap(float dashGap) {
+    public CouponView setDashGap(int dashGap) {
         this.dashGap = dashGap;
         return this;
     }
 
-    public CouponView setDashWidth(float dashWidth) {
+    public CouponView setDashWidth(int dashWidth) {
         this.dashWidth = dashWidth;
         return this;
     }
@@ -257,5 +269,37 @@ public class CouponView extends FrameLayout {
     public CouponView setLineWidth(int lineWidth) {
         this.lineWidth = lineWidth;
         return this;
+    }
+
+    public void setLineMarginTop(int lineMarginTop) {
+        this.lineMarginTop = lineMarginTop;
+    }
+
+    public void setLineMarginBottom(int lineMarginBottom) {
+        this.lineMarginBottom = lineMarginBottom;
+    }
+
+    public void setLineMarginLeft(int lineMarginLeft) {
+        this.lineMarginLeft = lineMarginLeft;
+    }
+
+    public void setLineMarginRight(int lineMarginRight) {
+        this.lineMarginRight = lineMarginRight;
+    }
+
+    public int getLineMarginTop() {
+        return lineMarginTop;
+    }
+
+    public int getLineMarginBottom() {
+        return lineMarginBottom;
+    }
+
+    public int getLineMarginLeft() {
+        return lineMarginLeft;
+    }
+
+    public int getLineMarginRight() {
+        return lineMarginRight;
     }
 }

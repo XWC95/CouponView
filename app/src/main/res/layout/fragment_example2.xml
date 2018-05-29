@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_launcher_background"
+    android:padding="10dp"
+    android:scrollbars="none">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.github.xwc.couponview.MainActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <com.github.xwc.view.CouponView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                app:bgc="#3F51B5"
+                app:dashGap="5dp"
+                app:dashWidth="5dp"
+                app:isDrawBottomSide="true"
+                app:isDrawLeftSide="true"
+                app:isDrawRightSide="true"
+                app:isDrawTopSide="true">
+
+            </com.github.xwc.view.CouponView>
+
+  <!--          <com.github.xwc.view.CouponView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                app:bgc="#303F9F"
+                app:dashGap="5dp"
+                app:dashWidth="5dp"
+                app:isDrawBottomSide="true"
+                app:isDrawLeftSide="true"
+                app:isDrawRightSide="true"
+                app:isDrawTopSide="true">
+
+            </com.github.xwc.view.CouponView>-->
+
+
+        </LinearLayout>
+
+
+        <!--#AD5A5A-->
+      <!--  <com.github.xwc.view.CouponView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            app:bgc="#FF4081"
+            app:dashGap="5dp"
+            app:dashWidth="5dp"
+            app:drawShapeType="triangle"
+            app:isDrawBottomShape="true"
+            app:isDrawTopShape="true">
+
+
+        </com.github.xwc.view.CouponView>
+
+
+        <com.github.xwc.view.CouponView
+            android:id="@+id/couponView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            app:bgc="#AD5A5A"
+            app:dashGap="5dp"
+            app:dashWidth="5dp"
+            app:drawShapeType="square"
+            app:isDrawLeftShape="true"
+            app:isDrawRightShape="true">
+
+
+        </com.github.xwc.view.CouponView>
+
+        <com.github.xwc.view.CouponView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            app:bgc="#FFB90F"
+            app:dashGap="5dp"
+            app:dashWidth="5dp"
+            app:drawShapeType="square"
+            app:isDrawTopShape="true">
+
+
+        </com.github.xwc.view.CouponView>-->
+    </LinearLayout>
+</ScrollView>
