@@ -31,7 +31,6 @@ public class CouponModel extends DrawModel {
         //遍历水平方向可绘制size
         for (int i = 0; i < horItemSize; i++) {
             float x = view.getDashGap() + view.getDashWidth() + horRedundancy / 2 + ((view.getDashGap() + view.getDashWidth() * 2) * i);
-            mCanvas.drawCircle(x, 0, view.getDashWidth(), shapePaint);
             if (view.isDrawTopShape()) {
                 mCanvas.drawCircle(x, 0, view.getDashWidth(), shapePaint);
             }
@@ -119,7 +118,7 @@ public class CouponModel extends DrawModel {
             RectF rectf = new RectF();
             // 设置正方形大小
             rectf.left = x - view.getDashWidth() / 2;
-            rectf.right = x + view.getDashWidth() / 2;
+            rectf.right = x + view.getDashWidth() ;
 
             // 如果isDrawTopSide为true
             if (view.isDrawTopShape()) {
@@ -187,9 +186,6 @@ public class CouponModel extends DrawModel {
 
     @Override
     protected void drawLine() {
-        if (!view.isDrawLeftLine() && !view.isDrawRightLine() && !view.isDrawTopLine() && !view.isDrawTopLine()) {
-            return;
-        }
 
         //遍历垂直方向可绘制size
         for (int i = 0; i < verItemSize; i++) {

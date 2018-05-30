@@ -1,13 +1,12 @@
 package com.github.xwc.view;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 
 import static com.github.xwc.view.CouponView.CIRCLE;
-import static com.github.xwc.view.CouponView.ELLIPSE;
+import static com.github.xwc.view.CouponView.OVAL;
 import static com.github.xwc.view.CouponView.SQUARE;
 import static com.github.xwc.view.CouponView.TRIANGLE;
 
@@ -54,20 +53,23 @@ public abstract class DrawModel {
         this.mCanvas = canvas;
     }
 
-    public void drawShape() {
+    public void drawing() {
 
         if (view.getDrawType() == CIRCLE) {
             drawCircle();
-        } else if (view.getDrawType() == ELLIPSE) {
+        } else if (view.getDrawType() == OVAL) {
             drawOval();
         } else if (view.getDrawType() == TRIANGLE) {
             drawTriangle();
         } else if (view.getDrawType() == SQUARE) {
             drawSquare();
         }
+
+        if (view.isDrawLeftLine() || view.isDrawRightLine() || view.isDrawTopLine() || view.isDrawTopLine()) {
+            drawLine();
+        }
     }
 
-    protected abstract void drawLine();
 
     /**
      * 测量垂直item数目
@@ -112,4 +114,9 @@ public abstract class DrawModel {
      * 绘制三角形
      */
     protected abstract void drawCircle();
+
+    /**
+     * 绘制虚线
+     */
+    protected abstract void drawLine();
 }

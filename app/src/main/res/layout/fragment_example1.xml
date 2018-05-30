@@ -71,10 +71,11 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="5dp"
-            app:bgc="#FFB90F"
+            app:bgc="#4682B4"
             app:dashGap="5dp"
             app:dashWidth="5dp"
             app:drawShapeType="square"
+            app:isDrawBottomShape="true"
             app:isDrawTopShape="true">
 
         </com.github.xwc.view.CouponView>

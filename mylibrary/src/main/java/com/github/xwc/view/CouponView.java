@@ -19,7 +19,7 @@ public class CouponView extends FrameLayout {
     //锯齿形状 （圆形，椭圆，三角形，正方形）
     private int drawType;
     public static final int CIRCLE = 0;
-    public static final int ELLIPSE = 1;
+    public static final int OVAL = 1;
     public static final int TRIANGLE = 2;
     public static final int SQUARE = 3;
 
@@ -82,33 +82,38 @@ public class CouponView extends FrameLayout {
             lineColor = typedArray.getColor(R.styleable.CouponView_lineColor, Color.WHITE);
             lineWidth = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineWidth, dpToPx(2));
 
-            isDrawLeftLine = typedArray.getBoolean(R.styleable.CouponView_isDrawLeftSide, false);
-            isDrawTopLine = typedArray.getBoolean(R.styleable.CouponView_isDrawTopSide, false);
-            isDrawRightLine = typedArray.getBoolean(R.styleable.CouponView_isDrawRightSide, false);
-            isDrawBottomLine = typedArray.getBoolean(R.styleable.CouponView_isDrawBottomSide, false);
+            isDrawLeftLine = typedArray.getBoolean(R.styleable.CouponView_isDrawLeftLine, false);
+            isDrawTopLine = typedArray.getBoolean(R.styleable.CouponView_isDrawTopLine, false);
+            isDrawRightLine = typedArray.getBoolean(R.styleable.CouponView_isDrawRightLine, false);
+            isDrawBottomLine = typedArray.getBoolean(R.styleable.CouponView_isDrawBottomLine, false);
 
             isDrawLeftShape = typedArray.getBoolean(R.styleable.CouponView_isDrawLeftShape, false);
+            isDrawTopShape = typedArray.getBoolean(R.styleable.CouponView_isDrawTopShape, false);
             isDrawRightShape = typedArray.getBoolean(R.styleable.CouponView_isDrawRightShape, false);
             isDrawBottomShape = typedArray.getBoolean(R.styleable.CouponView_isDrawBottomShape, false);
 
-            lineMarginTop = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginTop, dashWidth );
+            lineMarginTop = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginTop, dashWidth);
             lineMarginBottom = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginBottom, dashWidth);
             lineMarginLeft = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginLeft, dashWidth);
-            lineMarginRight = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginRight, dashWidth );
+            lineMarginRight = typedArray.getDimensionPixelOffset(R.styleable.CouponView_lineMarginRight, dashWidth);
 
             typedArray.recycle();
         }
     }
 
-    /**
-     * item数量的 计算公式 ：
-     * circleNum = (int) ((w-gap)/(2*radius+gap));
-     */
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        initDrawCanvas(w, h);
 
+        initDrawCanvas(w, h);
+        calculateItemNum(w, h);
+    }
+
+    /**
+     * item数量的 计算公式 ：
+     * Num = (int) ((w-gap)/(2*dashWidth+dashGap));
+     */
+    public void calculateItemNum(int w, int h) {
         if (isDrawLeftLine || isDrawRightLine || isDrawLeftShape || isDrawRightShape) {
             drawModel.measureVelNum(h);
         }
@@ -149,8 +154,7 @@ public class CouponView extends FrameLayout {
         super.onDraw(canvas);
         canvas.drawBitmap(mBitmap, 0, 0, null);
 
-        drawModel.drawShape();
-        drawModel.drawLine();
+        drawModel.drawing();
     }
 
     public static int dpToPx(int dp) {
@@ -301,5 +305,11 @@ public class CouponView extends FrameLayout {
 
     public int getLineMarginRight() {
         return lineMarginRight;
+    }
+
+    public void reDraw() {
+        initDrawCanvas(getWidth(), getHeight());
+        calculateItemNum(getWidth(), getHeight());
+        invalidate();
     }
 }
