@@ -1,25 +1,26 @@
 # CouponView 最好的优惠卷View，没有之一
 
 ## Feature:
-1.提供了4种边缘图案（圆形，椭圆，三角，正方）
-2.可自定义灵活的api支持
-3.以剪裁的方案切入，可展示覆盖在下面的背景图
-4.使用模板方法设计模式完成本例
+- 提供了4种边缘图案（圆形，椭圆，三角，正方）
+- 可自定义灵活的api支持
+- 以剪裁的方案切入，可展示覆盖在下面的背景图
+- 使用模板方法设计模式完成本例
 
 ## preview
-<img src="app/image/image1.jpg" width="280px"/><img src="app/image/image2.jpg" width="280px"/><img src="app/image/image3.jpg" width="280px"/>
+<img src="app/image/image1.jpg" width="280px" margin-right="30px"/><img src="app/image/image2.jpg" width="280px"/><img src="app/image/image3.jpg" width="280px"/>
 
-需要要自定义，可查看这个例子
-<img src="app/image/coupon.gif" width="280px"/>
+ 需要要自定义，可查看这个例子
 
+<div width="100%" align="center"><img src="app/image/coupon.gif"  width="280px"/></div>
+ 
 
 # Use:
-## 1.Gradle
+### 1.Gradle
 ```
 implementation 'com.github.xwc:couponView:1.0.0'
 ```
 
-## 2.1 在xml设置属性
+### 2.1 在xml设置属性
 ```
     <com.github.xwc.view.CouponView
         android:layout_width="0dp"
@@ -40,7 +41,7 @@ implementation 'com.github.xwc:couponView:1.0.0'
     </com.github.xwc.view.CouponView>
 ```
 
-## 2.2 在java设置属性
+### 2.2 在java设置属性
 ```
   couponView.setDrawType(CouponView.CIRCLE)
      .setBgc(Color.parseColor("#AD5A5A"))
@@ -57,13 +58,12 @@ implementation 'com.github.xwc:couponView:1.0.0'
      .setLineColor(Color.WHITE);
 ```
 
-## 自定义属性说明
+### 自定义属性说明
 
 属性名 | 说明 | 默认值
 :----------- | :----------- | :-----------
-
 dashGap         | 边缘图形间隙        | 5
-dashWidth         | 边缘图形半径        | 10
+dashWidth         | 边缘图形半径        | 10px
 bgc         | 背景色        | #C0C0C0
 isDrawTopShape         | 是否绘制上边边缘的图形            | false
 drawShapeType         | 边缘图形类型        | circle
@@ -77,10 +77,10 @@ isDrawLeftLine         | 是否绘制左边边缘的虚线        | false
 isDrawRightLine         | 是否绘制右边边缘的虚线        | false
 isDrawTopLine         | 是否绘制上边边缘的虚线            | false
 isDrawBottomLine         | 是否绘制下边边缘的虚线           | false
-lineMarginTop         | 虚线距离自身顶部距离        | 10
-lineMarginBottom         | 虚线距离自身底部距离         | 10
-lineMarginLeft         | 虚线距离自身左边距离             | 10
-lineMarginRight         | 虚线距离自身右边距离            | 10
+lineMarginTop         | 虚线距离自身顶部距离        | dashWidth
+lineMarginBottom         | 虚线距离自身底部距离         | dashWidth
+lineMarginLeft         | 虚线距离自身左边距离             | dashWidth
+lineMarginRight         | 虚线距离自身右边距离            | dashWidth
 
 ## LICENSE
 ```
