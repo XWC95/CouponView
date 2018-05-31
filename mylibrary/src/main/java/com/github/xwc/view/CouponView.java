@@ -165,64 +165,72 @@ public class CouponView extends FrameLayout {
         return isDrawLeftShape;
     }
 
-    public void setDrawLeftShape(boolean drawLeftShape) {
+    public CouponView setDrawLeftShape(boolean drawLeftShape) {
         isDrawLeftShape = drawLeftShape;
+        return this;
     }
 
     public boolean isDrawTopShape() {
         return isDrawTopShape;
     }
 
-    public void setDrawTopShape(boolean drawTopShape) {
+    public CouponView setDrawTopShape(boolean drawTopShape) {
         isDrawTopShape = drawTopShape;
+        return this;
     }
 
     public boolean isDrawRightShape() {
         return isDrawRightShape;
     }
 
-    public void setDrawRightShape(boolean drawRightShape) {
+    public CouponView setDrawRightShape(boolean drawRightShape) {
         isDrawRightShape = drawRightShape;
+        return this;
     }
 
     public boolean isDrawBottomShape() {
         return isDrawBottomShape;
     }
 
-    public void setDrawBottomShape(boolean drawBottomShape) {
+    public CouponView setDrawBottomShape(boolean drawBottomShape) {
         isDrawBottomShape = drawBottomShape;
+        return this;
     }
 
     public boolean isDrawLeftLine() {
         return isDrawLeftLine;
     }
 
-    public void setDrawLeftLine(boolean drawLeftLine) {
+    public CouponView setDrawLeftLine(boolean drawLeftLine) {
         isDrawLeftLine = drawLeftLine;
+        return this;
     }
 
     public boolean isDrawTopLine() {
         return isDrawTopLine;
     }
 
-    public void setDrawTopLine(boolean drawTopLine) {
+    public CouponView setDrawTopLine(boolean drawTopLine) {
         isDrawTopLine = drawTopLine;
+        return this;
     }
 
     public boolean isDrawRightLine() {
         return isDrawRightLine;
     }
 
-    public void setDrawRightLine(boolean drawRightLine) {
+    public CouponView setDrawRightLine(boolean drawRightLine) {
         isDrawRightLine = drawRightLine;
+        return this;
     }
 
     public boolean isDrawBottomLine() {
         return isDrawBottomLine;
     }
 
-    public void setDrawBottomLine(boolean drawBottomLine) {
+    public CouponView setDrawBottomLine(boolean drawBottomLine) {
         isDrawBottomLine = drawBottomLine;
+        return this;
     }
 
     public int getDrawType() {
@@ -275,20 +283,24 @@ public class CouponView extends FrameLayout {
         return this;
     }
 
-    public void setLineMarginTop(int lineMarginTop) {
+    public CouponView setLineMarginTop(int lineMarginTop) {
         this.lineMarginTop = lineMarginTop;
+        return this;
     }
 
-    public void setLineMarginBottom(int lineMarginBottom) {
+    public CouponView setLineMarginBottom(int lineMarginBottom) {
         this.lineMarginBottom = lineMarginBottom;
+        return this;
     }
 
-    public void setLineMarginLeft(int lineMarginLeft) {
+    public CouponView setLineMarginLeft(int lineMarginLeft) {
         this.lineMarginLeft = lineMarginLeft;
+        return this;
     }
 
-    public void setLineMarginRight(int lineMarginRight) {
+    public CouponView setLineMarginRight(int lineMarginRight) {
         this.lineMarginRight = lineMarginRight;
+        return this;
     }
 
     public int getLineMarginTop() {

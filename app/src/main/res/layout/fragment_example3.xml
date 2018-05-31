@@ -1,153 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/transparent_dialog_pattern"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context="com.github.xwc.couponview.MainActivity">
+    android:layout_height="match_parent">
 
-    <com.github.xwc.view.CouponView
-        android:id="@+id/couponView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:bgc="#AD5A5A"
-        app:dashGap="5dp"
-        app:dashWidth="5dp"
-        app:drawShapeType="circle"
-        app:isDrawBottomShape="true"
-        app:isDrawTopShape="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context="com.github.xwc.couponview.MainActivity">
+
+
+        <com.github.xwc.view.CouponView
+            android:id="@+id/couponView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="CouponView"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </com.github.xwc.view.CouponView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="CouponView"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="8dp"
+            android:text="边缘形状"
+            android:textColor="@android:color/black" />
 
-    </com.github.xwc.view.CouponView>
+        <RadioGroup
+            android:id="@+id/couponType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="边缘形状"
-        android:textColor="@android:color/black" />
+            <RadioButton
+                android:id="@+id/circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="半圆" />
 
-    <RadioGroup
-        android:id="@+id/couponType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/oval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="椭圆" />
 
-        <RadioButton
-            android:id="@+id/circle"
+            <RadioButton
+                android:id="@+id/triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="三角" />
+
+            <RadioButton
+                android:id="@+id/square"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正方形" />
+        </RadioGroup>
+
+
+        <!--   shape位置     -->
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="半圆" />
+            android:layout_marginTop="8dp"
+            android:text="图形显示位置"
+            android:textColor="@android:color/black" />
 
-        <RadioButton
-            android:id="@+id/oval"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/shapeLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="left" />
+
+            <CheckBox
+                android:id="@+id/shapeTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="top" />
+
+            <CheckBox
+                android:id="@+id/shapeRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="right" />
+
+            <CheckBox
+                android:id="@+id/shapeBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bottom" />
+        </LinearLayout>
+
+
+        <!-- Line的位置 -->
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="椭圆" />
+            android:layout_marginTop="8dp"
+            android:text="虚线显示位置"
+            android:textColor="@android:color/black" />
 
-        <RadioButton
-            android:id="@+id/triangle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="三角" />
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/square"
-            android:layout_width="wrap_content"
+            <CheckBox
+                android:id="@+id/lineLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="left" />
+
+            <CheckBox
+                android:id="@+id/lineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="top" />
+
+            <CheckBox
+                android:id="@+id/lineRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="right" />
+
+            <CheckBox
+                android:id="@+id/lineBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="bottom" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="正方形" />
-    </RadioGroup>
+            android:text="半径"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black" />
 
+        <SeekBar
+            android:layout_marginTop="4dp"
+            android:id="@+id/controlDashWidth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <!--   shape位置     -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="图形显示位置"
-        android:textColor="@android:color/black" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/shapeLeft"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="left" />
+            android:text="虚线边距"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black" />
 
-        <CheckBox
-            android:id="@+id/shapeTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="top" />
+        <SeekBar
+            android:layout_marginTop="4dp"
+            android:id="@+id/controlLineMargin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <CheckBox
-            android:id="@+id/shapeRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="right" />
 
-        <CheckBox
-            android:id="@+id/shapeBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="bottom" />
     </LinearLayout>
-
-
-    <!-- Line的位置 -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="虚线显示位置"
-        android:textColor="@android:color/black" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal">
-
-        <CheckBox
-            android:id="@+id/lineLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="left" />
-
-        <CheckBox
-            android:id="@+id/lineTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="top" />
-
-        <CheckBox
-            android:id="@+id/lineRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="right" />
-
-        <CheckBox
-            android:id="@+id/lineBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="bottom" />
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>

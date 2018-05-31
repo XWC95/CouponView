@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher_background"
+    android:background="@drawable/transparent_dialog_pattern"
     android:padding="10dp"
     android:scrollbars="none">
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="5dp"
-            app:bgc="#FF4081"
+            app:bgc="#808040"
             app:dashGap="5dp"
             app:dashWidth="5dp"
             app:drawShapeType="triangle"

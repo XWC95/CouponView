@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher_background"
+    android:background="@drawable/transparent_dialog_pattern"
     android:padding="10dp"
     android:scrollbars="none">
 
@@ -30,6 +30,7 @@
                 android:layout_weight="1"
                 app:bgc="#3F51B5"
                 app:dashGap="5dp"
+                app:lineColor="#FFD700"
                 app:dashWidth="5dp"
                 app:isDrawBottomLine="true"
                 app:isDrawLeftLine="true"
@@ -46,11 +47,11 @@
                 app:bgc="#303F9F"
                 app:dashGap="5dp"
                 app:dashWidth="5dp"
+                app:lineColor="#FFA500"
                 app:isDrawBottomLine="true"
                 app:isDrawLeftLine="true"
                 app:isDrawRightLine="true"
                 app:isDrawTopLine="true">
-
             </com.github.xwc.view.CouponView>
 
 
@@ -73,7 +74,7 @@
                 app:isDrawBottomLine="true"
                 app:isDrawLeftLine="true"
                 app:isDrawRightLine="true"
-                app:isDrawTopLine="true">
+                app:isDrawTopShape="true">
 
 
             </com.github.xwc.view.CouponView>
@@ -88,11 +89,12 @@
                 android:layout_weight="1"
                 app:bgc="#AD5A5A"
                 app:dashGap="5dp"
+                app:drawShapeType="oval"
                 app:dashWidth="5dp"
                 app:isDrawBottomLine="true"
                 app:isDrawLeftLine="true"
                 app:isDrawRightLine="true"
-                app:isDrawTopLine="true">
+                app:isDrawTopShape="true">
 
 
             </com.github.xwc.view.CouponView>

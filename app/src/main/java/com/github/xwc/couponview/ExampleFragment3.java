@@ -1,5 +1,7 @@
 package com.github.xwc.couponview;
 
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.SeekBar;
 
 import com.github.xwc.view.CouponView;
 
@@ -36,6 +39,12 @@ public class ExampleFragment3 extends Fragment {
     CheckBox lineRight;
     @BindView(R.id.lineBottom)
     CheckBox lineBottom;
+
+    @BindView(R.id.controlDashWidth)
+    SeekBar controlDashWidth;
+    @BindView(R.id.controlLineMargin)
+    SeekBar controlLineMargin;
+
     Unbinder unbinder;
 
     @Nullable
@@ -44,6 +53,64 @@ public class ExampleFragment3 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_example3, container, false);
         unbinder = ButterKnife.bind(this, view);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //通过代码设置属性
+        couponView.setDrawType(CouponView.CIRCLE)
+            .setBgc(Color.parseColor("#AD5A5A"))
+            .setDashGap(dpToPx(5))
+            .setDashWidth(dpToPx(5))
+            .setDrawRightShape(true)
+            .setDrawLeftShape(true)
+            .setDrawTopLine(true)
+            .setDrawBottomLine(true)
+            .setLineMarginBottom(dpToPx(10))
+            .setLineMarginTop(dpToPx(10))
+            .setLineMarginLeft(dpToPx(10))
+            .setLineMarginRight(dpToPx(10))
+            .setLineColor(Color.WHITE);
+
+        //控制半径大小
+        controlDashWidth.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                couponView.setDashWidth(dpToPx(progress));
+                couponView.reDraw();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        //控制虚线边距
+        controlLineMargin.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                couponView.setLineMarginLeft(dpToPx(progress));
+                couponView.reDraw();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     @OnClick({R.id.circle, R.id.oval, R.id.triangle, R.id.square, R.id.shapeLeft, R.id.shapeTop, R.id.shapeRight, R.id.shapeBottom, R.id.lineLeft, R.id.lineTop, R.id.lineRight, R.id.lineBottom})
@@ -127,5 +194,9 @@ public class ExampleFragment3 extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    public static int dpToPx(int dp) {
+        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
 }
