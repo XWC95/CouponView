@@ -10,7 +10,7 @@
 <img src="app/image/image1.jpg" width="280px" margin-right="30px"/><img src="app/image/image2.jpg" width="280px"/><img src="app/image/image3.jpg" width="280px"/>
 
  
-<div width="100%" align="center">**需要要自定义，可查看这个例子**</div>
+<div width="100%" align="center"><h6> 需要要自定义，可查看这个例子</h6></div>
 
 <div width="100%" align="center"><img src="app/image/coupon.gif"  width="280px"/></div>
  
