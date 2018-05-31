@@ -1,4 +1,4 @@
-# CouponView 最好的优惠卷View，没有之一
+# CouponView 最好的优惠卷View
 
 ## Feature:
 - 提供了4种边缘图案（圆形，椭圆，三角，正方）
